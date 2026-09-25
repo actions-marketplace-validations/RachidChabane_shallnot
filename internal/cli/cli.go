@@ -4,7 +4,9 @@ package cli
 import (
 	"fmt"
 	"io"
+	"strings"
 
+	"github.com/RachidChabane/shallnot/internal/adapters/agenthook"
 	"github.com/RachidChabane/shallnot/internal/app"
 	"github.com/RachidChabane/shallnot/internal/version"
 	"github.com/RachidChabane/shallnot/schemas"
@@ -20,13 +22,13 @@ const (
 	commandHelp    = "help"
 )
 
-const usage = `shallnot - a spec-to-test traceability gate
+var usage = `shallnot - a spec-to-test traceability gate
 
 Usage:
   shallnot check [flags]      trace requirements to test results and give a verdict
   shallnot gate [flags]       run the configured test commands, then check their results
   shallnot init [flags]       equip a repository: starter config, agent instructions, end-of-turn hooks
-  shallnot hook <harness>     answer an agent's end-of-turn hook: stop, claude-stop, copilot-stop, cursor-stop
+  shallnot hook <name>        answer an agent's end-of-turn hook: ` + strings.Join(agenthook.Names(), ", ") + `
   shallnot schema <name>      print a JSON Schema: report, config or spec
   shallnot version            print the version
   shallnot help               print this help

@@ -142,6 +142,11 @@ The requirements of shallnot itself, in its own Markdown spec format.
   package and a Claude Code plugin carrying the same skills and version, whose
   hooks only call the binary; each skill SHALL name itself and say when to use
   it without being asked.
+- **SN-84~1**: THE README, `llms.txt` and `docs/agents.md` SHALL name, as the
+  harnesses that get an end-of-turn hook, exactly those `shallnot init` can
+  install one for.
+- **SN-85~1**: THE usage text and `docs/agents.md` SHALL name exactly the
+  hooks `shallnot hook` answers.
 
 ## Reports
 
