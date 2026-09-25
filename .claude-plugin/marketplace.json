@@ -11,7 +11,7 @@
     {
       "name": "shallnot",
       "source": "./plugin",
-      "description": "Requirement-to-test traceability for coding agents: the convention as a skill, and an end-of-turn hook that holds the turn until the shallnot gate passes."
+      "description": "Requirement-to-test traceability for coding agents: skills to state requirements, bind tests to them and review those tests, and an end-of-turn hook that holds the turn until the shallnot gate passes."
     }
   ]
 }

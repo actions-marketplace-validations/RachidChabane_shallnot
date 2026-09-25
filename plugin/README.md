@@ -21,7 +21,7 @@ It is two packages in one directory:
 
 The plugin holds no logic. Everything it does goes through the `shallnot`
 binary, which must be on `PATH`
-([install](https://github.com/RachidChabane/shallnot#install)).
+([install](https://github.com/RachidChabane/shallnot#use-it-with-your-agent)).
 
 Install in Claude Code:
 
@@ -33,6 +33,7 @@ Install in Claude Code:
 [`evals/`](evals) holds the suite that `claude plugin eval` runs against the
 plugin, with and without it.
 
-A repository can also carry the same skills and hook itself, for every agent
-and every teammate, with `shallnot init`; see
-[docs/agents.md](../docs/agents.md).
+A repository can also carry the same skills itself, for every teammate, with
+`shallnot init`, together with end-of-turn hooks for the harnesses the project
+uses;
+[docs/agents.md](../docs/agents.md) says which harnesses get one.

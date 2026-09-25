@@ -1,7 +1,7 @@
 # Equipping coding agents
 
 This is the reference for making coding agents that work in a repository use
-`shallnot` without being asked. It covers `shallnot init`, the two end-of-turn
+`shallnot` without being asked. It covers `shallnot init`, the end-of-turn
 hooks, and the plugin package.
 
 See also [docs/spec-format.md](spec-format.md) for how requirements are
@@ -129,8 +129,8 @@ already-correct `conftest.py`), so the second run's plan has no `create` or
 
 ## End-of-turn hooks
 
-`shallnot hook <name>` answers one harness's end-of-turn hook call. Two
-protocols are implemented:
+`shallnot hook <name>` answers one harness's end-of-turn hook call, in the
+protocol that name stands for:
 
 - **The exit-code protocol**, defined by Claude Code's `Stop` hook and shared
   by every harness whose hook events read that way: it reads a JSON object
@@ -144,7 +144,7 @@ protocols are implemented:
   are the same adapter under two names: `stop` is what a harness's own
   configuration names; `claude-stop` is the name Claude Code configurations
   use.
-- **A harness-specific protocol**, one per harness whose hook input or
+- **A harness-specific protocol** for each harness whose hook input or
   output differs from the exit-code protocol: `shallnot hook copilot-stop`
   answers GitHub Copilot's `agentStop` hook (input `sessionId`, `cwd`; it
   blocks by printing `{"decision":"block","reason":"<message>"}` on standard
