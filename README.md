@@ -52,18 +52,18 @@ This writes:
   (`.agents/skills`, `.claude/skills`): how to write a requirement, tag a
   test, run the gate, review a tagged test
 - an end-of-turn hook for Claude Code, and for each other harness the project
-  is set up for: Codex, Copilot, Cursor, Gemini CLI, OpenCode, Qwen Code,
-  Factory Droid, Goose
+  is set up for: Codex, GitHub Copilot, Cursor, Gemini CLI, OpenCode,
+  Qwen Code, Factory Droid, Goose
 
 Commit those files. From then on you ask for features the usual way and never
 mention shallnot. The agent writes the requirement, the code and the tagged
 tests. If it tries to finish on a blocked gate, the hook hands it the findings.
 After three blocks in a row the hook lets go and tells you.
 
-VS Code Copilot picks up the Claude Code hook. Harnesses that cannot hold the
-end of a turn (Windsurf, Kiro, Amp, Zed, Cline) still read `AGENTS.md` and
-the skills, and CI catches what they let through. The full table is in
-[docs/agents.md](docs/agents.md).
+VS Code Copilot picks up the Claude Code hook. A harness that cannot hold the
+end of a turn relies on the instructions and skills it reads, and CI catches
+what it lets through. The table for every harness is in
+[docs/agents.md](docs/agents.md#hook-and-instruction-coverage).
 
 There is also a Claude Code plugin, for using the skills in every project
 without committing anything:
